@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="./Checkout.css">
+</head>
+<body>
+
+<h1>CHECK OUT PAGE</h1>
+
+<div id="cartItemsContainer">
+  
+</div>
+
+<div id="cartTotal">
+   
+</div>
+
+<div id="checkoutButtons">
+    <button onclick="increaseQuantity()">Increase Quantity</button>
+    <button onclick="decreaseQuantity()">Decrease Quantity</button>
+    <button onclick="checkout()">Do payment </button>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        displayCartItems();
+        calculateCartTotal();
+    });
+
+    function displayCartItems() {
+ 
+        const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+        
+        const cartItemsContainer = document.getElementById("cartItemsContainer");
+        cartItemsContainer.innerHTML = '';
+
+        cartItems.forEach(item => {
+            const productElement = document.createElement("div");
+            
+            productElement.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
+            cartItemsContainer.appendChild(productElement);
+        });
+    }
+
+    function calculateCartTotal() {
+     
+        const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+        const cartTotal = cartItems.reduce((total, item) => total + (item.quantity * item.price), 0);
+
+        const cartTotalContainer = document.getElementById("cartTotal");
+        cartTotalContainer.innerHTML = `Total: $${cartTotal.toFixed(2)}`;
+    }
+
+    function increaseQuantity() {
+      
+       
+
+        
+        displayCartItems();
+        calculateCartTotal();
+    }
+
+    function decreaseQuantity() {
+        
+        displayCartItems();
+        calculateCartTotal();
+    }
+
+    function checkout() {
+       
+        localStorage.removeItem("cart");
+
+       
+        alert("Thank you for your purchase!");
+
+        window.location.href="Dashboard.html"
+
+       
+
+    }
+</script>
+
+</body>
+</html>

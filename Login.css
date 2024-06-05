@@ -1,0 +1,49 @@
+
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(255, 0, 187);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#outer{
+    /* background-image: linear-gradient(75deg,rgb(241, 241, 16),rgb(240, 202, 209),rgb(125, 238, 238)); */
+    background-color: beige;
+    height:400px;
+    width: 50%;
+    border-radius: 20px;
+    display: flex;
+    /* align-items: center;
+    justify-content: center;
+    flex-direction: column; */
+    
+
+}
+form{
+    height: 350px;
+    width:300px;
+    background-color: #eab676;
+    margin-left: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px ;
+    position: absolute;
+    left: 0px;
+    top: 130px;
+
+}
+input{
+    border-radius: 10px;
+    width: 80%;
+}
+button{
+    width: 50%;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}

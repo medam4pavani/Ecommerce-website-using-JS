@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup form page</title>
+    <link rel="stylesheet" href="./Signup.css">
+</head>
+<body>
+   
+    
+    <div id="outer">
+
+        <form>
+        <h1>Registation form</h1>
+        <label for="">email</label>
+        <input id="email" type="email" required><br>
+        <label for="">Password</label>
+        <input  id="pass" type="password" required><br>
+        <label for="">Confirm password </label>
+        <input id="checkpass" type="password" required><br>
+
+        <button type="button" onclick="signup()"> SignUp </button>
+
+</form>
+
+
+
+    </div>
+
+    <script>
+        function signup(){
+
+            var email=document.getElementById("email").value;
+            var pass=document.getElementById("pass").value;
+            var checkpass=document.getElementById("checkpass").value;
+            
+            if(email==="" || pass==="" || checkpass===""){
+                alert("fill all the input fields")
+            }else if(pass!=checkpass){
+                alert("password miss match")
+            }
+            else{
+                alert(" signup was success")
+
+                window.location.href="loginform.html"//href  url current page
+
+                localStorage.setItem("email",email)
+                localStorage.setItem("pass",pass)
+            }
+
+        }
+    </script>
+</body>
+</html>

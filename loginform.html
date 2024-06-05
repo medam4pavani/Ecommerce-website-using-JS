@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login from</title>
+    <link rel="stylesheet" href="./Login.css">
+</head>
+<body>
+    <div id="outer">
+        <form>
+            <h1>login form</h1>
+            <label for="">email</label>
+            <input id="email2" type="email" required><br>
+            
+            <label for="">password</label>
+            <input id="pass2" type="password" required><br>
+           
+            <button type="button" onclick="login()">submit</button>
+        </form>
+        </div>
+
+        <script>
+            function login(){
+                var email3=document.getElementById("email2").value;
+                var pass3=document.getElementById("pass2").value;
+
+
+                var getemail=localStorage.getItem("email")
+                var getpass=localStorage.getItem("pass")
+
+                if(email3==getemail && pass3==getpass){
+                    alert("your Login was successfull u will dedirect to DashBoard in a while")
+
+                    window.location.href="Dashboard.html"
+                }
+
+            }
+        </script>
+    
+</body>
+</html>
